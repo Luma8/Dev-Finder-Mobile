@@ -13,14 +13,23 @@ import {
 // import { FaFacebook } from 'react-icons/fa';
 import Logo from '../../assets/Logo/LogoDevFinder.png';
 
-export default function Login({ navigation }) {
+export default function Register({ navigation }) {
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar backgroundColor={'#180521'} />
             <View style={styles.logo}>
                 <Image source={Logo} />
             </View>
-            <Text style={styles.TextLogin}>Login</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Nome"
+                placeholderTextColor={"#FFFFFF"}
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Sobrenome"
+                placeholderTextColor={"#FFFFFF"}
+            />
             <TextInput
                 style={styles.input}
                 placeholder="Email"
@@ -31,20 +40,17 @@ export default function Login({ navigation }) {
                 placeholder="Senha"
                 placeholderTextColor={"#FFFFFF"}
             />
+            <TextInput
+                style={styles.input}
+                placeholder="Confirme a Senha"
+                placeholderTextColor={"#FFFFFF"}
+            />
             <TouchableOpacity
                 style={styles.btn}
                 onPress={() => navigation.navigate('Home')}
             >
                 <Text style={styles.textButton}>
-                    Entrar
-                </Text>
-            </TouchableOpacity>
-            {/* <FaFacebook /> */}
-            <TouchableOpacity style={styles.btnCad}
-                onPress={() => navigation.navigate('Register')}
-            >
-                <Text style={styles.textButton}>
-                    Crie uma nova Conta!
+                    Criar
                 </Text>
             </TouchableOpacity>
         </SafeAreaView>
@@ -72,7 +78,7 @@ const styles = StyleSheet.create({
         borderColor: '#FFFFFF',
         borderWidth: 1,
         marginHorizontal: '8%',
-        height: '7%',
+        height: '8%',
         borderRadius: 10,
         marginTop: '5%',
     },
@@ -97,6 +103,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginTop: '10%',
         marginHorizontal: '10%',
+
     },
     textButton: {
         color: '#FFFFFF',
